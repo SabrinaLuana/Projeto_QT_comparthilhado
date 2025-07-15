@@ -1,11 +1,12 @@
 import sys
 import random
-from PyQt5 import QtWidgets, uic, QtGui
+from PyQt5 import QtWidgets, QtGui, QtCore
 from jogomemoria import Ui_MainWindow
 
 class JogoMemoria(QtWidgets.QMainWindow,Ui_MainWindow):
     def __init__(self):
         super().__init__()
+        self.ui = Ui_MainWindow()
         self.setupUi(self)
 
         # essa linha busca todas as Qlabels
@@ -66,7 +67,6 @@ class JogoMemoria(QtWidgets.QMainWindow,Ui_MainWindow):
         self.cartas_reveladas = []
 
 if __name__ == "__main__":
-    from PyQt5 import QtCore
     app = QtWidgets.QApplication(sys.argv)
     window = JogoMemoria()
     window.show()
